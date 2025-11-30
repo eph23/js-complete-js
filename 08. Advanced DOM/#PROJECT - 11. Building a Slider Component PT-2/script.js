@@ -253,3 +253,7 @@ const slider = function () {
 };
 
 slider();
+
+document.addEventListener('DOMContentLoaded', function () {
+  console.log('HTML');
+});
