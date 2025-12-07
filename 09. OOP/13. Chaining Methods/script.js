@@ -20,11 +20,9 @@ class Account {
 
   deposit(val) {
     this.#movements.push(val);
-    return this;
   }
   withdraw(val) {
     this.deposit(-val);
-    return this;
   }
 
   #approveLoan(val) {
@@ -36,19 +34,15 @@ class Account {
       this.deposit(val);
       console.log(`Loan approved of ${val}`);
     }
-
-    return this;
   }
 }
 
 const acc1 = new Account('Ephraim', 'USD', 1111, []);
 console.log(acc1);
-acc1
-  .deposit(300)
-  .withdraw(100)
-  .withdraw(50)
-  .deposit(500)
-  .requestLoan(25000)
-  .withdraw(5000)
-  .deposit(5000);
+console.log(acc1.deposit(1000));
+console.log(acc1.withdraw(50));
+console.log(acc1.deposit(500));
 console.log(acc1.getMovements());
+console.log(acc1);
+// console.log(acc1.#movements);
+// console.log(acc1.#requestLoan);
